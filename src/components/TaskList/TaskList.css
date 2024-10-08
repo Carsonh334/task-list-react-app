@@ -1,0 +1,66 @@
+/* src/components/TaskList/TaskList.css */
+.task-list {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.view-buttons {
+  margin-bottom: 20px;
+}
+
+.view-buttons button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-buttons button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.add-task {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+li span {
+  margin: 0 10px;
+}
+
+.task-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
