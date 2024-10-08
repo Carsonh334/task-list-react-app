@@ -77,6 +77,15 @@ const TaskList = () => {
     downloadAnchorNode.remove();
   };
 
+  const handleTaskClick = (task) => {
+    setSelectedTask(task);
+  };
+
+  const handleCheckboxChange = (e, taskId) => {
+    e.stopPropagation();
+    toggleTaskCompletion(taskId);
+  };
+
   return (
     <div className="task-list">
       <h1>Task List</h1>
@@ -118,13 +127,12 @@ const TaskList = () => {
       </div>
       <ul>
         {filteredTasks.map((task) => (
-          <li key={task.id} onClick={() => setSelectedTask(task)}>
+          <li key={task.id} onClick={() => handleTaskClick(task)}>
             <input
               type="checkbox"
               checked={task.completed}
               onChange={(e) => {
-                e.stopPropagation();
-                toggleTaskCompletion(task.id);
+                handleCheckboxChange(e, task.id);
               }}
             />
             <span>{task.title}</span>
